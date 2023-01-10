@@ -1,0 +1,89 @@
+.card-container {
+  background-color: #272727;
+  margin-left: 0px;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.star {
+  color: #fbbf24;
+  font-size: 25px;
+}
+.logo {
+  height: 50px;
+}
+.rating {
+  font-family: 'Roboto';
+  color: #ffffff;
+}
+.title {
+  font-family: 'Roboto';
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 0px;
+  margin-left: 15px;
+}
+.top-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.star-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 0px;
+  margin-left: 15px;
+}
+.location-logo {
+  color: #ffffff;
+  font-size: 25px;
+}
+.location {
+  font-family: 'Roboto';
+  color: #ffffff;
+  margin: 10px;
+}
+.employment {
+  color: #ffffff;
+  font-family: 'Roboto';
+  margin: 10px;
+}
+.employment-logo {
+  color: #ffffff;
+  font-size: 25px;
+}
+.loc-emp {
+  display: flex;
+  flex-direction: row;
+}
+.employment-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.location-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 20px;
+}
+.middle-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.description-heading {
+  font-family: 'Roboto';
+  color: #ffffff;
+  font-weight: bold;
+}
+.description {
+  font-family: 'Roboto';
+  color: #ffffff;
+  font-size: 15px;
+}

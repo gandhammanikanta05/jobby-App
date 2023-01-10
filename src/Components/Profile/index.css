@@ -1,0 +1,19 @@
+.profile-section {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
+  background-size: cover;
+  padding: 30px;
+  border-radius: 30px;
+  width: 20vw;
+}
+.name {
+  color: #6366f1;
+  font-family: 'Roboto';
+  font-size: x-large;
+  font-weight: 600;
+}
+.role {
+  font-family: 'Roboto';
+  color: #2c364c;
+  font-size: small;
+  font-weight: 600;
+}

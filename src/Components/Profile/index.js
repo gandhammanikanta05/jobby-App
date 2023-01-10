@@ -35,19 +35,13 @@ class Profile extends Component {
   }
 
   render() {
-    const {profile, isLoading} = this.state
-    console.log(isLoading)
-    console.log(profile)
+    const {profile} = this.state
     const {name, profileImageUrl, shortBio} = profile
-    console.log(name)
-    console.log(profileImageUrl)
-    console.log(shortBio)
     return (
-      <div>
-        {this.getProfileDetails()}
+      <div className="profile-section">
         <img src={profileImageUrl} alt={name} />
-        <h1>{name}</h1>
-        <p>{shortBio}</p>
+        <h1 className="name">{name}</h1>
+        <p className="role">{shortBio}</p>
       </div>
     )
   }

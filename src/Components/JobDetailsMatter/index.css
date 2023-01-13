@@ -1,0 +1,48 @@
+.main-container {
+  background-color: #000000;
+  background-size: cover;
+  padding: 30px;
+}
+.description {
+  font-family: 'Roboto';
+  color: #ffffff;
+  font-size: 15px;
+}
+.description-heading {
+  font-family: 'Roboto';
+  color: #ffffff;
+  font-weight: bold;
+}
+.link-logo {
+  color: #4f46e5;
+  font-size: 25px;
+}
+.description-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.skills-container {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.skill-name {
+  font-family: 'Roboto';
+  color: #ffffff;
+  font-size: 10px;
+}
+.list-item {
+  display: flex;
+  flex-direction: row;
+}
+.skill-img {
+  height: 30px;
+}
+.life-at-company-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

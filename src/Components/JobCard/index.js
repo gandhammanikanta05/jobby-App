@@ -17,13 +17,13 @@ const JobCard = props => {
     title,
   } = jobDetails
 
-  const openJobdetails = () => {
+  /* const openJobdetails = () => {
     gotoJobDetails(id)
-  }
+  } */
 
   return (
-    <Link to="/jobdetails">
-      <li className="card-container" onClick={openJobdetails}>
+    <Link to={`/jobdetails${id}`}>
+      <li className="card-container">
         <div className="top-section">
           <img src={companyLogoUrl} alt="company logo" className="logo" />
           <div>

@@ -73,7 +73,7 @@ class Jobs extends Component {
     this.setState({searchValue: event.target.value})
   }
 
-  gotoJobDetails = async id => {
+  /* gotoJobDetails = async id => {
     const jwtToken = Cookies.get('jwt_token')
     const url = ` https://apis.ccbp.in/jobs/${id}`
     const options = {
@@ -85,7 +85,7 @@ class Jobs extends Component {
     const response = await fetch(url, options)
     const data = await response.json()
     return <JobDetails key={id} details={data} />
-  }
+  } */
 
   renderJoblist = () => {
     const {jobsList} = this.state

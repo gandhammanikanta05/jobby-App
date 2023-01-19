@@ -5,7 +5,7 @@ import {IoLocationSharp} from 'react-icons/io5'
 import {BsBriefcaseFill} from 'react-icons/bs'
 
 const JobCard = props => {
-  const {jobDetails, gotoJobDetails} = props
+  const {jobDetails} = props
   const {
     id,
     companyLogoUrl,
@@ -17,17 +17,13 @@ const JobCard = props => {
     title,
   } = jobDetails
 
-  /* const openJobdetails = () => {
-    gotoJobDetails(id)
-  } */
-
   return (
-    <Link to={`/jobdetails${id}`}>
+    <Link to={`/jobs/${id}`}>
       <li className="card-container">
         <div className="top-section">
           <img src={companyLogoUrl} alt="company logo" className="logo" />
           <div>
-            <p className="title">{title}</p>
+            <h1 className="title">{title}</h1>
             <div className="star-section">
               <HiStar className="star" />
               <p className="rating">{rating}</p>
@@ -38,22 +34,22 @@ const JobCard = props => {
           <div className="loc-emp">
             <div className="location-section">
               <IoLocationSharp id="location" className="location-logo" />
-              <label htmlFor="location" className="location">
+              <p htmlFor="location" className="location">
                 {location}
-              </label>
+              </p>
             </div>
             <div className="employment-section">
               <BsBriefcaseFill id="employment" className="employment-logo" />
-              <label htmlFor="employment" className="employment">
+              <p htmlFor="employment" className="employment">
                 {employmentType}
-              </label>
+              </p>
             </div>
           </div>
           <p className="title">{packagePerAnnum}</p>
         </div>
         <hr />
         <div className="third-section">
-          <p className="description-heading">Description</p>
+          <h1 className="description-heading">Description</h1>
           <p className="description">{jobDescription}</p>
         </div>
       </li>

@@ -1,6 +1,6 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
-import {Redirect} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 
 import './index.css'
 
@@ -50,6 +50,8 @@ class LoginForm extends Component {
 
   render() {
     const {showErrorMsg, errorMsg} = this.state
+    console.log(showErrorMsg)
+    console.log(errorMsg)
     const jwtToken = Cookies.get('jwt_token')
     if (jwtToken !== undefined) {
       return <Redirect to="/" />
@@ -79,10 +81,12 @@ class LoginForm extends Component {
               onChange={this.enterpassword}
             />
           </div>
+
           <button type="submit" className="login-btn">
             Login
           </button>
-          {showErrorMsg && <p>*{errorMsg}</p>}
+
+          {showErrorMsg && <p className="error-msg">*{errorMsg}</p>}
         </form>
       </div>
     )

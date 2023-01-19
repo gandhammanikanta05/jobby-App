@@ -7,7 +7,7 @@ import './index.css'
 class JobDetails extends Component {
   state = {
     jobDetails: '',
-    similarJobs: '',
+    similarJobs: [],
     skillsList: [],
     updatedLifeAtCompany: '',
   }

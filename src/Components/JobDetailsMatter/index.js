@@ -12,7 +12,7 @@ const JobDetailsMatter = props => {
   const companyWebsiteUrl = jobDetails.company_website_url
   const employmentType = jobDetails.employment_type
   const jobDescription = jobDetails.job_description
-  const lifeAtCompany = jobDetails.life_at_company
+  // const lifeAtCompany = jobDetails.life_at_company
   // const lifeAtCompanyDescription = jobDetails.life_at_company.description
   // const lifeAtCompanyImageUrl = jobDetails.life_at_company.image_url
   const locations = jobDetails.location
@@ -77,12 +77,12 @@ const JobDetailsMatter = props => {
         <h1 className="description-heading">Life at Company</h1>
         <div className="life-at-company-container">
           <p className="description">{updatedLifeAtCompany.description}</p>
-          <img src={updatedLifeAtCompany.imageUrl} alt="lifeAtCompany" />
+          <img src={updatedLifeAtCompany.imageUrl} alt="life at company" />
         </div>
       </div>
-      <div>
+      <ul className="similar-jobs-container">
         <SimilarJobs similarJobDetails={similarJobs} />
-      </div>
+      </ul>
     </div>
   )
 }

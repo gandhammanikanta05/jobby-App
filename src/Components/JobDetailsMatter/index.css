@@ -1,6 +1,7 @@
 .main-container {
   background-color: #000000;
   background-size: cover;
+  height: 200vh;
   padding: 30px;
 }
 .description {
@@ -45,4 +46,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+.similar-jobs-container {
+  background-color: #000000;
 }

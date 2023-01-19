@@ -16,25 +16,33 @@ const Header = props => {
     history.replace('/login')
   }
   return (
-    <div className="header-container">
-      <img
-        src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
-        alt="website logo"
-        className="logo"
-        onClick={onclickHomePage}
-      />
+    <ul className="header-container">
+      <Link to="/">
+        <img
+          src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
+          alt="website logo"
+          className="logo"
+          onClick={onclickHomePage}
+        />
+      </Link>
       <div>
-        <Link to="/" className="home">
-          Home
-        </Link>
-        <Link to="/jobs" className="jobs">
-          Jobs
-        </Link>
+        <li>
+          <Link to="/" className="home">
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link to="/jobs" className="jobs">
+            Jobs
+          </Link>
+        </li>
       </div>
-      <button type="button" className="logout-btn" onClick={onclickLogout}>
-        Logout
-      </button>
-    </div>
+      <li>
+        <button type="button" className="logout-btn" onClick={onclickLogout}>
+          Logout
+        </button>
+      </li>
+    </ul>
   )
 }
 export default Header

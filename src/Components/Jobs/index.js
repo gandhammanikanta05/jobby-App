@@ -1,12 +1,11 @@
 import {Component} from 'react'
 import {BsSearch} from 'react-icons/bs'
+import Loader from 'react-loader-spinner'
 import Cookies from 'js-cookie'
 import Header from '../Header'
 import Profile from '../Profile'
 import JobCard from '../JobCard'
 import './index.css'
-
-import JobDetails from '../JobDetails'
 
 class Jobs extends Component {
   state = {
@@ -15,9 +14,14 @@ class Jobs extends Component {
     inputValue: '',
     searchValue: '',
     employmentType: [],
+    isLoading: true,
   }
 
   componentDidMount = () => {
+    this.getJobsList()
+  }
+
+  tryagainJobsList = () => {
     this.getJobsList()
   }
 
@@ -45,7 +49,19 @@ class Jobs extends Component {
         rating: eachone.rating,
         title: eachone.title,
       }))
-      this.setState({jobsList: updatedData})
+      this.setState({jobsList: updatedData, isLoading: false})
+    } else {
+      ;<div>
+        <img
+          src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
+          alt="failure view"
+        />
+        <h1>Oops! Something Went Wrong</h1>
+        <p>We cannot seem to find the page you are looking for.</p>
+        <button type="button" onClick={this.tryagainJobsList}>
+          Retry
+        </button>
+      </div>
     }
   }
 
@@ -73,20 +89,6 @@ class Jobs extends Component {
     this.setState({searchValue: event.target.value})
   }
 
-  /* gotoJobDetails = async id => {
-    const jwtToken = Cookies.get('jwt_token')
-    const url = ` https://apis.ccbp.in/jobs/${id}`
-    const options = {
-      headers: {
-        Authorization: `Bearer ${jwtToken}`,
-      },
-      method: 'GET',
-    }
-    const response = await fetch(url, options)
-    const data = await response.json()
-    return <JobDetails key={id} details={data} />
-  } */
-
   renderJoblist = () => {
     const {jobsList} = this.state
     return (
@@ -109,15 +111,26 @@ class Jobs extends Component {
         alt="no jobs"
       />
       <h1 className="heading">No Jobs Found</h1>
-      <p className="label">We could not found any jobs. Try other filters</p>
+      <p className="label">We could not find any jobs. Try other filters</p>
     </div>
   )
 
+  loader = () => {
+    console.log('loader called')
+    return (
+      <div className="loader-container" data-testid="loader">
+        <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
+      </div>
+    )
+  }
+
   render() {
-    const {jobsList} = this.state
+    const {jobsList, isLoading} = this.state
+    console.log(isLoading)
     const len = jobsList.length
     const renderJobsSection =
       len > 0 ? this.renderJoblist() : this.renderNojobs()
+    const renderAns = isLoading ? this.loader() : renderJobsSection
     return (
       <div className="jobs-container">
         <Header newprops={this.props} />
@@ -235,7 +248,7 @@ class Jobs extends Component {
                 <BsSearch className="search-icon" />
               </button>
             </form>
-            {renderJobsSection}
+            {renderAns}
           </div>
         </div>
       </div>

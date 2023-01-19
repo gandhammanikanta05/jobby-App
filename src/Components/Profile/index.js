@@ -12,6 +12,10 @@ class Profile extends Component {
     this.getProfileDetails()
   }
 
+  tryagainProfile = () => {
+    this.getProfileDetails()
+  }
+
   getProfileDetails = async () => {
     const jwtToken = Cookies.get('jwt_token')
     const url = 'https://apis.ccbp.in/profile'
@@ -31,6 +35,12 @@ class Profile extends Component {
       }
       // console.log(updatedData)
       this.setState({profile: updatedData})
+    } else {
+      ;<div>
+        <button type="button" onClick={this.tryagainProfile}>
+          Retry
+        </button>
+      </div>
     }
   }
 
@@ -39,7 +49,7 @@ class Profile extends Component {
     const {name, profileImageUrl, shortBio} = profile
     return (
       <div className="profile-section">
-        <img src={profileImageUrl} alt={name} />
+        <img src={profileImageUrl} alt="profile" />
         <h1 className="name">{name}</h1>
         <p className="role">{shortBio}</p>
       </div>
